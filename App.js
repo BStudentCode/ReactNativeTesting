@@ -7,6 +7,7 @@ import {
   Image,
   TouchableHighlight,
   SafeAreaView,
+  Button,
 } from "react-native";
 
 //<Image source={require("./assets/icon.png")} /> for local images
@@ -26,17 +27,11 @@ import {
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Hello World!</Text>
-      <TouchableHighlight onPress={() => console.log("image click out")}>
-        <Image
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableHighlight>
-      <StatusBar style="auto" />
+      <Button
+        title="Click Me"
+        color="orange"
+        onPress={() => console.log("Button tapped!")}
+      />
     </SafeAreaView>
   );
 }

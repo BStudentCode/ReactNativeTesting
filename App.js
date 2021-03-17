@@ -1,23 +1,24 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 
-//PADDING - SPACE INSIDE OBJECT
-//MARGIN - SPACE AROUND OBJECT
+//NO style inheritence like CSS in React Native
 export default function App() {
   return (
     <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-      <View style={{backgroundColor: "dodgerblue", width: 100, height: 100, padding: 20, paddingHorizontal: 10, paddingLeft: 30}}>
-        <View style={{
-          backgroundColor: "gold",
-          width: 50,
-          height: 50
-        }}></View>
-      </View>
-      <View style={{backgroundColor: "tomato", width: 100, height: 100, margin: 20}}></View>
+      <Text style={{
+        fontSize: 30, 
+        fontStyle: "italic", 
+        fontWeight: "600", 
+        color: "tomato", 
+        textTransform: "capitalize",
+        textAlign: "center",
+        lineHeight: 40
+        }}>Hello! I love React Native Hello! I love React Native Hello! I love React Native Hello! I love React Native</Text>
+
     </View>
   );
 }

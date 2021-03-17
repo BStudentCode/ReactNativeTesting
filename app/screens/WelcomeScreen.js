@@ -6,15 +6,20 @@ import AppButton from '../components/AppButton'
 function WelcomeScreen(props) {
   return (
     <ImageBackground
+      blurRadius={4.7}
       style={styles.background}
       source={require("../assets/background.jpg")}
     >
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../assets/logo.png")} />
-        <Text>Henlo it me</Text>
+        <Text style={styles.tagline}>Henlo it me</Text>
       </View>
+
+      <View style={styles.buttonsContainer}>
       <AppButton title="Login"/>
-      <View style={styles.registerButton}></View>
+      <AppButton title="Register" color="secondary"/>
+      </View>
+
     </ImageBackground>
   );
 }
@@ -25,10 +30,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#e796ff",
+  buttonsContainer: {
+    padding: 20,
+    width: "100%"
   },
   logo: {
     width: 100,
@@ -39,6 +43,12 @@ const styles = StyleSheet.create({
     top: 70,
     alignItems: "center",
   },
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 20,
+
+  }
 });
 
 export default WelcomeScreen;

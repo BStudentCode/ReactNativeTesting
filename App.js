@@ -5,14 +5,12 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 
-//FOR CIRCLES, BORDERRADIUS MUST BE AT LEAST HALF OF WIDTH
+//ANDROID ONLY ACCEPTS "ELEVATION" FOR SHADOW
 export default function App() {
   return (
     <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-      <View style={{backgroundColor: "dodgerblue", width: 100, height: 100, borderWidth: 10, borderColor: "royalblue", borderRadius: 10, borderTopWidth: 20, borderTopLeftRadius: 50}}>
-
+      <View style={{backgroundColor: "dodgerblue", width: 100, height: 100, shadowColor: "grey", shadowOffset: {width: 10, height: 10}, shadowOpacity: 1, shadowRadius: 10, elevation: 10}}>
       </View>
-      <View style={{backgroundColor: "darkolivegreen", width: 100, height: 100, borderWidth: 10, borderColor: "darkseagreen", borderRadius: 50, top: 10}} /> 
     </View>
   );
 }

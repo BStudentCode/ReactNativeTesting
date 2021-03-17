@@ -9,6 +9,7 @@ import {
   SafeAreaView,
   Button,
   Alert,
+  Platform,
 } from "react-native";
 
 //<Image source={require("./assets/icon.png")} /> for local images
@@ -64,7 +65,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+    paddingTop: Platform.OS === "android" ? 20 : 0, //IF PLATFORM OS IS ANDROID ADD 20 PADDING TO TOP ELSE ADD 0 PADDING
+  }, //could use StatusBar.CurrentHeight but SafeAreaView now works on Android
 });

@@ -22,7 +22,9 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: 100,
+          flexBasis: 100, //width of height
+          flexShrink: 1, //if there is overflow, shrink this div. same as setting flex: to -1
+          //width: 100,
           height: 100,
         }}
       ></View>

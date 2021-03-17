@@ -12,6 +12,11 @@ import {
   useDeviceOrientation,
 } from "@react-native-community/hooks";
 
+//ROW=ALIGN-ITEMS FOR CENTER OF PAGE
+//COLUMN=JUSTIFY-CONTENT FOR CENTER OF PAGE
+//ALIGN-SELF TO OVERRIDE PARENT
+//ALIGNITEMS DETERMINES ALIGNMENT OF ITEMS WITHIN EACH LINE, ALIGNCONTENT DETERMINES ALIGNMENT OF THE ENTIRE CONTENT (ONLY WHEN WRAPPING)
+
 export default function App() {
   const { landscape } = useDeviceOrientation(); //get Landscape node from Orientation object
 

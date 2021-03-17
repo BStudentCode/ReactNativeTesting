@@ -4,10 +4,15 @@ import { View } from "react-native";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 
-//ROW=ALIGN-ITEMS FOR CENTER OF PAGE
-//COLUMN=JUSTIFY-CONTENT FOR CENTER OF PAGE
-//ALIGN-SELF TO OVERRIDE PARENT
-//ALIGNITEMS DETERMINES ALIGNMENT OF ITEMS WITHIN EACH LINE, ALIGNCONTENT DETERMINES ALIGNMENT OF THE ENTIRE CONTENT (ONLY WHEN WRAPPING)
+
+//FOR CIRCLES, BORDERRADIUS MUST BE AT LEAST HALF OF WIDTH
 export default function App() {
-  return <ViewImageScreen />;
+  return (
+    <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
+      <View style={{backgroundColor: "dodgerblue", width: 100, height: 100, borderWidth: 10, borderColor: "royalblue", borderRadius: 10, borderTopWidth: 20, borderTopLeftRadius: 50}}>
+
+      </View>
+      <View style={{backgroundColor: "darkolivegreen", width: 100, height: 100, borderWidth: 10, borderColor: "darkseagreen", borderRadius: 50, top: 10}} /> 
+    </View>
+  );
 }

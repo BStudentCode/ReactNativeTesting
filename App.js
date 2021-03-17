@@ -31,12 +31,14 @@ import {
 
 //PROMPT ALERTS ONLY WORK ON iOS
 
+//WHEN IMPORTING ARRAY OF STYLES, OBJECT ON THE RIGHT OVERWRITES PROPS OF OBJECT ON THE LEFT
+
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, containerStyle]}>
       <Button
         title="Click Me"
-        color="orange"
+        color="cyan"
         onPress={() =>
           Alert.alert("My title", "My message", [
             { text: "YES! 😀", onPress: () => console.log("Pressed YES") },
@@ -47,7 +49,7 @@ export default function App() {
 
       <Button
         title="Prompt Me"
-        color="orange"
+        color="aqua"
         onPress={() =>
           Alert.prompt("My title", "My message", (text) => console.log(text))
         }
@@ -55,6 +57,8 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+const containerStyle = { backgroundColor: "orange" };
 
 const styles = StyleSheet.create({
   container: {

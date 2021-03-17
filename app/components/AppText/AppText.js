@@ -5,9 +5,10 @@ import styles from './styles'
 //can store styles in separate file
 
 //props.children, destructured
-function AppText({children}) {
+//Another example of overriding a style using array
+function AppText({children, style}) {
     return (
-        <Text style={styles.text}>{children}</Text>
+        <Text style={[styles.text, style]}>{children}</Text>
     );
 }
 

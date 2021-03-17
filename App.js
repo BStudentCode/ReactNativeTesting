@@ -1,37 +1,34 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  Platform,
-  Dimensions,
-} from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
+import { View } from "react-native";
+
+//ROW=ALIGN-ITEMS FOR CENTER OF PAGE
+//COLUMN=JUSTIFY-CONTENT FOR CENTER OF PAGE
+//ALIGN-SELF TO OVERRIDE PARENT
 
 export default function App() {
-  const { landscape } = useDeviceOrientation(); //get Landscape node from Orientation object
-
   return (
-    <SafeAreaView style={[styles.container]}>
+    <View
+      style={{
+        backgroundColor: "fff",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "50%",
-          height: landscape ? "100%" : "30%",
-        }} //get if landscape from useDeviceOrientation() is true if true set height to 100% if false set to 30%
+          width: 100,
+          height: 100,
+          alignSelf: "flex-end",
+        }}
       ></View>
-    </SafeAreaView>
+      <View style={{ backgroundColor: "gold", width: 100, height: 100 }}></View>
+      <View
+        style={{ backgroundColor: "tomato", width: 100, height: 100 }}
+      ></View>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? 20 : 0,
-  },
-});

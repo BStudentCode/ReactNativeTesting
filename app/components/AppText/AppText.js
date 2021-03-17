@@ -1,5 +1,8 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
+
+import styles from './styles'
+//can store styles in separate file
 
 //props.children, destructured
 function AppText({children}) {
@@ -9,12 +12,5 @@ function AppText({children}) {
 }
 
 
-const styles = StyleSheet.create({
-    text: {
-        color: "tomato",
-        fontSize: 108,
-        fontFamily: "Roboto"
-    }
-})
 
 export default AppText;

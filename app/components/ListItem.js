@@ -10,15 +10,19 @@ import colors from '../config/colors'
 //add onPress prop to make it a universal component that can be used in other projects
 
 //add renderRightActions property to make component reusable
-function ListItem({ title, subTitle, image, onPress, renderRightActions}) {
+
+//wrap <Image> in braces and add 'image &&' (referring to image prop) - this means if no image prop is supplied, this wont be rendered
+//add ImageComponent prop, pass <Icon> to ImageComponent whenever we use a ListItem and need an Icon instead of Image
+function ListItem({ title, subTitle, image, ImageComponent, onPress, renderRightActions}) {
     return (
         <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={styles.container}>
-            <Image style={styles.image} source={image} />
-            <View>
+            {ImageComponent}
+            {image && <Image style={styles.image} source={image} />}
+            <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
-            <AppText style={styles.subTitle}>{subTitle}</AppText>
+            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
             </View>
         </View>
         </TouchableHighlight>
@@ -30,6 +34,10 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         padding: 13
+    },
+    detailsContainer: {
+        marginLeft: 10,
+        justifyContent: "center"
     },
     image: {
         width: 70,

@@ -4,6 +4,9 @@ import { FlatList, StyleSheet, View } from 'react-native';
 import ListItem from '../components/ListItem'
 import ListItemSeparator from '../components/ListItemSeparator';
 import Screen from '../components/Screen'
+import ListItemDeleteAction from '../components/ListItemDeleteAction'
+
+
 
 
 const messages = [
@@ -29,7 +32,13 @@ function MessagesScreen(props) {
         <ListItemSeparator />}
         data={messages}
         keyExtractor={message => message.id.toString()}
-        renderItem={({item}) => <ListItem onPress={() => console.log('tap tap tap in')} title={item.title} subTitle={item.description} image={item.image}/>}
+        renderItem={({item}) => <ListItem 
+        onPress={() => console.log('tap tap tap in')} 
+        title={item.title} 
+        subTitle={item.description} 
+        image={item.image}
+        renderRightActions={ListItemDeleteAction}
+        />}
          />
         </Screen>
     );

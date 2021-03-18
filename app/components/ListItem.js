@@ -13,12 +13,12 @@ import colors from '../config/colors'
 
 //wrap <Image> in braces and add 'image &&' (referring to image prop) - this means if no image prop is supplied, this wont be rendered
 //add ImageComponent prop, pass <Icon> to ImageComponent whenever we use a ListItem and need an Icon instead of Image
-function ListItem({ title, subTitle, image, ImageComponent, onPress, renderRightActions}) {
+function ListItem({ title, subTitle, image, IconComponent, onPress, renderRightActions}) {
     return (
         <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={styles.container}>
-            {ImageComponent}
+            {IconComponent}
             {image && <Image style={styles.image} source={image} />}
             <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
@@ -33,7 +33,8 @@ function ListItem({ title, subTitle, image, ImageComponent, onPress, renderRight
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        padding: 13
+        padding: 13,
+        backgroundColor: colors.white
     },
     detailsContainer: {
         marginLeft: 10,

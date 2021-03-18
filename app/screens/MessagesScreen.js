@@ -29,7 +29,7 @@ function MessagesScreen(props) {
         <ListItemSeparator />}
         data={messages}
         keyExtractor={message => message.id.toString()}
-        renderItem={({item}) => <ListItem title={item.title} subTitle={item.description} image={item.image}/>}
+        renderItem={({item}) => <ListItem onPress={() => console.log('tap tap tap in')} title={item.title} subTitle={item.description} image={item.image}/>}
          />
         </Screen>
     );

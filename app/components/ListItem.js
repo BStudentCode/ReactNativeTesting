@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
 import AppText from './AppText/AppText';
 
 import colors from '../config/colors'
 
 //add second view as all flexboxes are column by default, adding second overrides parent row style
-function ListItem({ title, subTitle, image}) {
+//add onPress prop to make it a universal component that can be used in other projects
+function ListItem({ title, subTitle, image, onPress}) {
     return (
+        <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={styles.container}>
             <Image style={styles.image} source={image} />
             <View>
@@ -14,6 +16,7 @@ function ListItem({ title, subTitle, image}) {
             <AppText style={styles.subTitle}>{subTitle}</AppText>
             </View>
         </View>
+        </TouchableHighlight>
     );
 }
 

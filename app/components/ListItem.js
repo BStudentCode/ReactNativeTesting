@@ -33,7 +33,7 @@ function ListItem({ title, subTitle, image, IconComponent, onPress, renderRightA
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        padding: 13,
+        padding: 10,
         backgroundColor: colors.white
     },
     detailsContainer: {
